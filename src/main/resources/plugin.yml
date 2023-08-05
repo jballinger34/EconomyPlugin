@@ -1,0 +1,25 @@
+name: EconomyPlugin
+version: '${project.version}'
+main: me.fakepumpkin7.economyplugin.EconomyPlugin
+api-version: 1.19
+commands:
+  pay:
+    description: Pay other players
+    usage: /pay username amount
+  balance:
+    description: Show your balance
+    usage: /balance username
+    aliases: bal
+  balancetop:
+    description: Show the top 10 richest players
+    usage: /<command>
+    aliases: baltop
+  shop:
+    description: Opens the server shop
+    usage: /<command>
+  withdraw:
+    description: Creates a money note
+    usage: /<command> amount
+  sell:
+    description: Sells items from inventory
+    usage: /<command> hand/all

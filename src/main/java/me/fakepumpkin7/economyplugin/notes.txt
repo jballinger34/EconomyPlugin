@@ -1,0 +1,18 @@
+BUGS:
+
+commands:
+/pay
+/bal
+/baltop
+/shop
+/withdraw
+
+
+///
+added since last update:
+    new patterns:
+        checkered
+        topline
+
+
+///

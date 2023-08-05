@@ -1,0 +1,589 @@
+#list of all valid minecraft materials https://dev.bukkit.org/projects/supplies/pages/material-list
+
+homePage:
+  inventoryTitle: "§f§lShop"     #what the inventory will be called - give each shop page a unique name. uses the minecraft colour codes for format
+  inventoryDimensions:
+    rows: 3
+    columns: 9 #this must be 9
+  links:                        #links section can be empty
+      #you can add links to other shop pages, "opens" field must be the same as their later specified "inventoryTitle",
+     homePage:                  #links to this page, used as a way of displaying infa
+      opens: "§f§lShop"
+      lore:                     #the lore for the link item, in this case provides information, lore must be in list format
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: COMPASS            #minecraft material that will be shown
+      slot: 22                  # the inventory slot this will go in, indexes start at 0
+
+     #here are the default links to other pages
+     equipmentPage:
+       opens: "§f§lEquipment"
+       lore:
+         - "§7All of your important needs"
+       block: SADDLE
+       slot: 10
+     foodPage:
+       opens: "§f§lFood"
+       lore:
+         - "§7For when you're hungry"
+       block: COOKED_BEEF
+       slot: 11
+     brewingPage:
+       opens: "§f§lBrewing"
+       lore:
+       block: BREWING_STAND
+       slot: 12
+     miningPage:
+       opens: "§f§lMining"
+       lore:
+       block: DIAMOND
+       slot: 13
+     mobdropsPage:
+       opens: "§f§lMob Drops"
+       lore:
+       block: ROTTEN_FLESH
+       slot: 14
+     farmingPage:
+      opens: "§f§lFarming"
+      lore:
+        - "§7Start your own farm or sell your harvest"
+      block: WHEAT
+      slot: 15
+     redstonePage:
+        opens: "§f§lRedstone"
+        lore:
+          - "§7For all your redstone needs"
+        block: REDSTONE
+        slot: 16
+
+  selling: #selling nothing on homePage by default,
+   #provided a blueprint for selling vanilla and custom items identified by name, lore and block/item type
+
+   #examplevanillaitem:
+   #  block: GOLD_BLOCK #will always be a minecraft material
+   #  slot: 34          #slot item will go in
+   #  buyprice: 1000    #buy price of item
+   #  sellprice: 500    #sell price of item
+
+   #examplecustomitem:
+   #  block: GOLD_BLOCK
+   #  customblockname: "Magic Block"        #if this item is not custom, leave blank
+   #  customblocklore:                      #if this item is not custom, leave blank, if custom specify a list for the lore lines
+   #    - "An example of how custom blocks can be added to the shop"
+   #    - ":)"
+   #  slot: 35
+   #  buyprice: 1000
+   #  sellprice: 500
+
+
+  tileBackGround:             #if enabled is true, fills background with stained-glass of the colour specified
+    enabled: false            #false so nothing happens
+    colour: white             #minecraft stained-glass colours
+  tileBackGroundAccent:
+    enabled: true             #whether the shop background gets a secondary colour of stained glass
+                              #background does not have to be enabled for accent to still show, if you only want a pattern and no fill
+    colour: gray
+    pattern: ring             #patterns will not override any entries in the spots they try to fill
+                              #patterns include: ring (ring around edge) (will add more
+
+equipmentPage:
+  inventoryTitle: "§f§lEquipment"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 22
+    info:                     #as there is no page called "§f§lInfo", this link will not open another inventory when clicked, so used for information
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 23
+  selling:
+    ender_pearl:
+     block: ENDER_PEARL
+     slot: 10
+     buyprice: 50
+     sellprice: 5
+    shield:
+     block: SHIELD
+     slot: 11
+     buyprice: 100
+     sellprice: 25
+    arrow:
+      block: ARROW
+      slot: 12
+      buyprice: 5
+      sellprice: 3
+    boat:
+      block: OAK_BOAT
+      slot: 13
+      buyprice: 20
+      sellprice: 1
+    saddle:
+      block: SADDLE
+      slot: 14
+      buyprice: 200
+      sellprice: 60
+    bucket:
+      block: BUCKET
+      slot: 15
+      buyprice: 60
+      sellprice: 18
+    torch:
+      block: TORCH
+      slot: 16
+      buyprice: 3
+      sellprice: 0.6
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: yellow
+    pattern: ring
+
+foodPage:
+  inventoryTitle: "§f§lFood"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 22
+    info:
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 23
+  selling:
+    steak:
+      block: COOKED_BEEF
+      slot: 10
+      buyprice: 8
+      sellprice: 2
+    chicken:
+      block: COOKED_CHICKEN
+      slot: 11
+      buyprice: 6
+      sellprice: 2
+    cake:
+      block: CAKE
+      slot: 12
+      buyprice: 100
+      sellprice: 20
+    bakedpotato:
+      block: BAKED_POTATO
+      slot: 13
+      buyprice: 3
+      sellprice: 1
+    bread:
+      block: BREAD
+      slot: 14
+      buyprice: 6
+      sellprice: 2
+    goldencarrot:
+      block: GOLDEN_CARROT
+      slot: 15
+      buyprice: 40
+      sellprice: 12
+    goldenapple:
+      block: GOLDEN_APPLE
+      slot: 16
+      buyprice: 500
+      sellprice: 150
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: green
+    pattern: ring
+
+brewingPage:
+  inventoryTitle: "§f§lBrewing"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+   homePage:
+     opens: "§f§lShop"
+     lore:
+      - "§7Click to return to main page"
+     block: COMPASS
+     slot: 22
+   info:
+     opens: "§f§lInfo"
+     lore:
+       - "§7Browse through the server shop"
+       - "§7Left click to buy an item"
+       - "§7Shift left click to buy a stack"
+       - "§7Right click to sell an item"
+       - "§7Shift right click to sell all in your inventory"
+     block: BOOK
+     slot: 23
+  selling:
+    netherwart:
+      block: NETHER_WART
+      slot: 10
+      buyprice: 20
+      sellprice: 4
+    magmacream:
+      block: MAGMA_CREAM
+      slot: 11
+      buyprice: 30
+      sellprice: 9
+    glisteningmelon:
+      block: GLISTERING_MELON_SLICE
+      slot: 12
+      buyprice: 40
+      sellprice: 12
+    sugar:
+      block: SUGAR
+      slot: 13
+      buyprice: 2
+      sellprice: 1
+    pufferfish:
+      block: PUFFERFISH
+      slot: 14
+      buyprice: 100
+      sellprice: 30
+    rabbitfoot:
+      block: RABBIT_FOOT
+      slot: 15
+      buyprice: 100
+      sellprice: 20
+    blazepowder:
+      block: BLAZE_POWDER
+      slot: 16
+      buyprice: 50
+      sellprice: 15
+
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: magenta
+    pattern: ring
+
+miningPage:
+  inventoryTitle: "§f§lMining"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 22
+    info:
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 23
+  selling:
+    coal:
+      block: COAL
+      slot: 10
+      buyprice: 8
+      sellprice: 2
+    copper:
+      block: COPPER_INGOT
+      slot: 11
+      buyprice: 12
+      sellprice: 3
+    iron:
+      block: IRON_INGOT
+      slot: 12
+      buyprice: 20
+      sellprice: 6
+    gold:
+      block: GOLD_INGOT
+      slot: 13
+      buyprice: 50
+      sellprice: 15
+    lapis:
+      block: LAPIS_LAZULI
+      slot: 14
+      buyprice: 5
+      sellprice: 2
+    emerald:
+      block: EMERALD
+      slot: 15
+      buyprice: 100
+      sellprice: 30
+    diamond:
+      block: DIAMOND
+      slot: 16
+      buyprice: 250
+      sellprice: 75
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: blue
+    pattern: ring
+
+mobdropsPage:
+  inventoryTitle: "§f§lMob Drops"
+  inventoryDimensions:
+    rows: 4
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 31
+    info:
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 32
+  selling:
+    rottenflesh:
+      block: ROTTEN_FLESH
+      slot: 10
+      buyprice: 1
+      sellprice: 0.3
+    bone:
+      block: BONE
+      slot: 11
+      buyprice: 5
+      sellprice: 2
+    spidereye:
+      block: SPIDER_EYE
+      slot: 12
+      buyprice: 5
+      sellprice: 2
+    string:
+      block: STRING
+      slot: 13
+      buyprice: 2
+      sellprice: 0.6
+    gunpowder:
+      block: GUNPOWDER
+      slot: 14
+      buyprice: 10
+      sellprice: 3
+    ghasttear:
+      block: GHAST_TEAR
+      slot: 15
+      buyprice: 80
+      sellprice: 24
+    phantommembrane:
+      block: PHANTOM_MEMBRANE
+      slot: 16
+      buyprice: 5
+      sellprice: 2
+    leather:
+      block: LEATHER
+      slot: 19
+      buyprice: 10
+      sellprice: 3
+    rabbithide:
+      block: RABBIT_HIDE
+      slot: 20
+      buyprice: 2
+      sellprice: 0.6
+    inksac:
+      block: INK_SAC
+      slot: 21
+      buyprice: 5
+      sellprice: 2
+    rawcod:
+      block: COD
+      slot: 22
+      buyprice: 5
+      sellprice: 2
+    rawsalmon:
+      block: SALMON
+      slot: 23
+      buyprice: 5
+      sellprice: 2
+    tropicalfish:
+      block: TROPICAL_FISH
+      slot: 24
+      buyprice: 5
+      sellprice: 1
+    feather:
+      block: FEATHER
+      slot: 25
+      buyprice: 2
+      sellprice: 0.6
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: red
+    pattern: ring
+
+farmingPage:
+  inventoryTitle: "§f§lFarming"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 22
+    info:
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 23
+  selling:
+    seeds:
+      block: WHEAT_SEEDS
+      slot: 10
+      buyprice: 4
+      sellprice: 0.5
+    wheat:
+      block: WHEAT
+      slot: 11
+      buyprice: 2
+      sellprice: 1
+    potato:
+      block: POTATO
+      slot: 12
+      buyprice: 4
+      sellprice: 1
+    carrot:
+      block: CARROT
+      slot: 13
+      buyprice: 4
+      sellprice: 1
+    beetroot:
+      block: BEETROOT
+      slot: 14
+      buyprice: 4
+      sellprice: 1
+    sugarcane:
+      block: SUGAR_CANE
+      slot: 15
+      buyprice: 5
+      sellprice: 2
+    cactus:
+      block: CACTUS
+      slot: 16
+      buyprice: 5
+      sellprice: 2
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: yellow
+    pattern: ring
+
+redstonePage:
+  inventoryTitle: "§f§lRedstone"
+  inventoryDimensions:
+    rows: 3
+    columns: 9
+  links:
+    homePage:
+      opens: "§f§lShop"
+      lore:
+       - "§7Click to return to main page"
+      block: COMPASS
+      slot: 22
+    info:
+      opens: "§f§lInfo"
+      lore:
+        - "§7Browse through the server shop"
+        - "§7Left click to buy an item"
+        - "§7Shift left click to buy a stack"
+        - "§7Right click to sell an item"
+        - "§7Shift right click to sell all in your inventory"
+      block: BOOK
+      slot: 23
+  selling:
+    redstone_dust:
+        block: REDSTONE
+        slot: 10
+        buyprice: 3
+        sellprice: 1
+    redstone_torch:
+      block: REDSTONE_TORCH
+      slot: 11
+      buyprice: 4
+      sellprice: 1
+    repeater:
+      block: REPEATER
+      slot: 12
+      buyprice: 25
+      sellprice: 5
+    comparator:
+      block: COMPARATOR
+      slot: 13
+      buyprice: 30
+      sellprice: 5
+    redstone_lamp:
+      block: REDSTONE_LAMP
+      slot: 14
+      buyprice: 35
+      sellprice: 5
+    observer:
+      block: OBSERVER
+      slot: 15
+      buyprice: 30
+      sellprice: 5
+    piston:
+      block: PISTON
+      slot: 16
+      buyprice: 50
+      sellprice: 5
+  tileBackGround:
+    enabled: false
+    colour: black
+  tileBackGroundAccent:
+    enabled: true
+    colour: red
+    pattern: ring
+

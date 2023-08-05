@@ -1,0 +1,5 @@
+#starting money, must be a double
+startingmoney: 1000.0
+
+#currency token used, must be a string
+currency: £
